@@ -2,7 +2,7 @@
 
 **Autor:** Eduard Sebastian Butuza · Desarrollo Web en Entorno Cliente (DWEC) · 2.º DAW · Curso 2026-27
 
-
+Esta carpeta contiene la página de la Tarea 7 y los ejercicios de JavaScript. Ábrela en VS Code, pulsa **Go Live** y prueba los botones en el navegador.
 
 ## Capturas
 
@@ -10,7 +10,7 @@
 
 <img src="capturas/a-pagina.png" alt="La página recién cargada con mi nombre en la navbar" width="600">
 
-Al cargar la página aparece mi nombre y se muestran los dos alumnos iniciales.
+Al cargar la página aparece mi nombre y están los dos alumnos iniciales del ejercicio 5.
 
 ### b) Ejercicios 1 y 2: el precio y las películas
 
@@ -38,12 +38,12 @@ Probé la fecha 12/11/2007 y el resultado fue que había pasado hace 6939 días.
 
 ## Reflexión
 
-Al escribir un callback con una función flecha, la sintaxis queda más corta.
-En este trabajo las he usado en operaciones como map, filter y reduce.
-Si la flecha tiene una sola expresión, devuelve su resultado automáticamente.
-Con un cuerpo entre llaves hay que usar return para devolver un valor.
-Los métodos de las clases usan la sintaxis corta, por ejemplo media(), y no una flecha.
-Así pueden usar this para acceder a los datos del objeto, como sus notas.
+Al escribir un callback con una función flecha, la sintaxis queda más corta.  
+En este trabajo las he usado en operaciones como `map`, `filter` y `reduce`.  
+Si la flecha tiene una sola expresión, devuelve su resultado automáticamente.  
+Con un cuerpo entre llaves hay que usar `return` para devolver un valor.  
+Los métodos de las clases usan la sintaxis corta, por ejemplo `media()`, y no una flecha.  
+Así pueden usar `this` para acceder a los datos del objeto, como sus notas.
 
 ## Fuentes
 
@@ -53,4 +53,4 @@ Así pueden usar this para acceder a los datos del objeto, como sus notas.
 
 ## Uso de IA
 
-He usado ia para ayudarme con el ejercicio 5 y 3 del js porque me daba algunos errores y no sabia terminarlo bien
+He usado Chat gpt para resolver dudas y revisar errores de JavaScript. 
