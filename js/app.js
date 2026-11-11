@@ -153,22 +153,9 @@ function buscarAntigua() {
   console.log("Ejercicio 2: find →", antigua);
 }
 
-
-// ============================================================
-// Ejercicio 3 · Tu propio callback
-// ============================================================
-
 const numeros = [3, -1, 4, -1, 5, 9];
 document.querySelector("#numeros3").textContent = `const numeros = [${numeros.join(", ")}];`;
 
-// TODO: transformar(lista, operacion) hace a mano lo que hace map, sin usar map:
-//       recorre lista con for…of, llama a operacion con cada elemento, guarda lo que devuelve
-//       en un array nuevo y, al final, devuelve ese array.
-function transformar(lista, operacion) {
-
-}
-
-// Ya está hecha: escribe en #salida3 tu resultado, el de map y numeros
 function mostrar3(nombre, resultado, conMap) {
   const salida = document.querySelector("#salida3");
   salida.textContent = "";
@@ -184,8 +171,16 @@ function mostrar3(nombre, resultado, conMap) {
     salida.append(p);
   });
 }
+function transformar(lista, operacion) {
+  const resultado = [];
 
-// El modelo: funcionará cuando hayas escrito transformar()
+  for (const elemento of lista) {
+    resultado.push(operacion(elemento));
+  }
+
+  return resultado;
+}
+
 function verDobles() {
   const resultado = transformar(numeros, (n) => n * 2);
   mostrar3("dobles", resultado, numeros.map((n) => n * 2));
@@ -193,14 +188,16 @@ function verDobles() {
 }
 
 function verCuadrados() {
-  // TODO: como verDobles(), con el cuadrado de cada número (n ** 2).
+  const resultado = transformar(numeros, (n) => n ** 2);
+  mostrar3("cuadrados", resultado, numeros.map((n) => n ** 2));
+  console.log("Ejercicio 3: cuadrados →", resultado);
 }
 
 function verAbsolutos() {
-  // TODO: como verDobles(), con el valor absoluto (Math.abs). Pista: Math.abs ya es una función,
-  //       así que se puede pasar tal cual, sin paréntesis.
+  const resultado = transformar(numeros, Math.abs);
+  mostrar3("valores absolutos", resultado, numeros.map(Math.abs));
+  console.log("Ejercicio 3: valores absolutos →", resultado);
 }
-
 
 // ============================================================
 // Ejercicio 4 · Dos contadores con closure
