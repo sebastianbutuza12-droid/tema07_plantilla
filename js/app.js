@@ -1,5 +1,5 @@
 /*
-  Tarea 7 · DWEC · Eduard Sebastian Butuza
+  Tarea 7 · DWEC · [Tu nombre y apellidos]
   Funciones, flechas y clases.
 
   Cómo usar esta plantilla:
@@ -38,16 +38,16 @@ function pintarLista(selector, textos) {
 // Ejercicio 1 · Precio final
 // ============================================================
 
+// TODO: calcularPrecio(base, iva, descuento) devuelve el precio final con return. No lee ni pinta nada.
+//       iva vale 21 por defecto y descuento, 0 por defecto (parámetros por defecto).
+//       Primero se resta el descuento (un tanto por ciento de la base) y después se suma el IVA.
+//       Comprueba en la consola: calcularPrecio(100) tiene que dar 121.
 function calcularPrecio(base, iva = 21, descuento = 0) {
   const precioConDescuento = base - (base * descuento / 100);
   const precioFinal = precioConDescuento + (precioConDescuento * iva / 100);
+
   console.log("Precio calculado:", precioFinal);
   return precioFinal;
-}
-
-// Ya está hecha: 74.8 → "74.80 €"
-function formatearEuros(cantidad) {
-  return cantidad.toFixed(2) + " €";
 }
 
 function mostrarPrecio() {
@@ -68,28 +68,34 @@ function mostrarPrecio() {
   let precioFinal;
 
   if (descuentoTexto === "") {
+    // Al omitir el descuento se utiliza su valor por defecto: 0.
     precioFinal = calcularPrecio(base, iva);
   } else {
     descuento = Number(descuentoTexto);
+
     if (descuento < 0 || descuento > 100) {
       error.textContent = "El descuento debe estar entre 0 y 100.";
       error.classList.remove("d-none");
       console.log("Error: descuento fuera de rango");
       return;
     }
+
     precioFinal = calcularPrecio(base, iva, descuento);
   }
 
   error.classList.add("d-none");
+
   const lineas = [
     "Precio sin IVA: " + formatearEuros(base),
     "Descuento: " + descuento + " %",
     "IVA: " + iva + " %",
     "Precio final: " + formatearEuros(precioFinal)
   ];
+
   pintarLista("#salida1", lineas);
   console.log("Se ha mostrado el desglose del precio");
 }
+
 
 // ============================================================
 // Ejercicio 2 · Películas: de function a flecha
